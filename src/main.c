@@ -40,8 +40,17 @@ int main() {
         file_one_Buffer.ptr = temp;
         file_one_Buffer.buffer_length++;
 
-        // printf("%d ",file_one_Buffer.buffer_length);
         file_one_Buffer.ptr[file_one_Buffer.buffer_length-1] = ch;
+    }
+
+    for(int i = 0; i < file_one_Buffer.buffer_length; i++) {
+        if(!isprint(file_one_Buffer.ptr[i])) {
+            printf("Invalid character found: %c\n", file_one_Buffer.ptr[i]);
+            free(file_one_Buffer.ptr);
+            file_one_Buffer.buffer_length = 0;
+            fclose(file_one);
+            exit(EXIT_FAILURE);
+        }
     }
 
     char* temp = realloc(file_one_Buffer.ptr, (sizeof(char)*file_one_Buffer.buffer_length+1));
