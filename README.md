@@ -21,6 +21,6 @@
 
 ### Future plans
 
-1. [] Add buffer limit check
-2. [] Add file creation feature
-3. [] Add text appending feature
+1. #### [] Add buffer limit check
+2. #### [] Add file creation feature
+3. #### [] Add text appending feature
